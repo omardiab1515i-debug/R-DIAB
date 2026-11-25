@@ -2,28 +2,30 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>R-DIAB | Web Gateway</title>
+<title>R-DIAB | مواقعك المفضلة</title>
 <style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#142b50 0,#080d18 48%,#05070c 100%);color:#eef4ff;display:flex;flex-direction:column}
-header{padding:24px 7%;display:flex;justify-content:space-between;align-items:center}.logo{font-size:25px;font-weight:800;letter-spacing:2px;color:#68b7ff}.tag{color:#9aacc5;font-size:13px}
-main{width:min(1000px,92%);margin:7vh auto 30px;text-align:center}h1{font-size:clamp(32px,6vw,58px);margin:0 0 12px}.sub{color:#a9b9d0;line-height:1.8;margin:0 auto 28px;max-width:650px}
-.panel{background:rgba(14,24,42,.88);border:1px solid #25466e;border-radius:18px;padding:22px;box-shadow:0 20px 70px #0008}.controls{display:grid;grid-template-columns:minmax(150px,.8fr) minmax(180px,2fr) auto;gap:10px}
-select,input,button{min-height:48px;border-radius:10px;border:1px solid #35577f;background:#091321;color:#eef4ff;padding:0 13px;font-size:15px}button{background:#1677d2;border:0;padding:0 25px;font-weight:bold;cursor:pointer}button:hover{background:#2992f4}
-#status{color:#9db5d2;font-size:13px;min-height:22px;margin-top:13px}.viewer{margin-top:22px;height:58vh;min-height:320px;overflow:hidden;border:1px solid #29496f;border-radius:14px;background:#fff}iframe{width:100%;height:100%;border:0;background:white}
-footer{margin-top:auto;padding:22px;text-align:center;color:#72849d;font-size:12px}@media(max-width:650px){.controls{grid-template-columns:1fr}header{padding:18px 5%}main{margin-top:4vh}}
-.quick{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px;border:1px solid #35577f;border-radius:10px;background:#091321;color:#dcecff;text-decoration:none;font-weight:bold}.quick:hover{background:#17365a;border-color:#68b7ff}
+:root{color-scheme:dark}*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#142b50 0,#080d18 48%,#05070c 100%);color:#eef4ff;display:flex;flex-direction:column}
+header{padding:24px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:800;letter-spacing:2px;color:#68b7ff}.tag{color:#9aacc5;font-size:13px}
+main{width:min(900px,92%);margin:9vh auto 30px;text-align:center}
+h1{font-size:clamp(32px,6vw,58px);margin:0 0 12px}
+.sub{color:#a9b9d0;line-height:1.8;margin:0 auto 28px;max-width:650px}
+.panel{background:rgba(14,24,42,.88);border:1px solid #25466e;border-radius:18px;padding:24px;box-shadow:0 20px 70px #0008}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
+.quick{display:flex;align-items:center;justify-content:center;min-height:58px;padding:12px;border:1px solid #35577f;border-radius:12px;background:#091321;color:#dcecff;text-decoration:none;font-weight:bold;font-size:16px;transition:.15s}
+.quick:hover{background:#17365a;border-color:#68b7ff;transform:translateY(-2px)}
+.note{color:#9db5d2;font-size:12px;line-height:1.7;margin:16px 0 0}
+footer{margin-top:auto;padding:22px;text-align:center;color:#72849d;font-size:12px}
+@media(max-width:600px){header{padding:18px 5%}main{margin-top:5vh}.panel{padding:16px}}
 </style></head>
 <body>
-<header><div class="logo">R-DIAB</div><div class="tag">AUTHORIZED WEB GATEWAY</div></header>
-<main><h1>تصفّح من مكان واحد</h1>
-<p class="sub">واجهة لعرض النطاقات المصرّح لك باستخدامها فقط. أضف النطاقات المسموح بها في إعدادات الاستضافة.</p>
-<section class="panel"><div class="controls">
-<select id="host" aria-label="النطاق المسموح"></select><input id="path" value="/" placeholder="/page" aria-label="مسار الصفحة"><button id="go">افتح الموقع</button>
-</div><div id="status" role="status">جارٍ تحميل قائمة النطاقات...</div></section>
-<section class="viewer"><iframe id="viewer" title="الموقع المعروض" referrerpolicy="no-referrer"></iframe></section>
-<section class="panel" style="margin-top:18px;text-align:right">
-<h2 style="margin:0 0 14px;font-size:19px">روابط سريعة للمواقع</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+<header><div class="logo">R-DIAB</div><div class="tag">YOUR FAVORITE SITES</div></header>
+<main>
+<h1>كل مواقعك في مكان واحد</h1>
+<p class="sub">اختار الموقع اللي عايز تفتحه من الروابط الرسمية التالية.</p>
+<section class="panel">
+<div class="links">
 <a class="quick" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
 <a class="quick" href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Google</a>
 <a class="quick" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -31,15 +33,10 @@ footer{margin-top:auto;padding:22px;text-align:center;color:#72849d;font-size:12
 <a class="quick" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
 <a class="quick" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a>
 <a class="quick" href="https://www.snapchat.com/" target="_blank" rel="noopener noreferrer">Snapchat</a>
-<a class="quick" href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">Roblox</a>
+<a class="quick" href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">Roblox للألعاب</a>
 </div>
-<p style="color:#9db5d2;font-size:12px;margin:13px 0 0">الروابط تفتح المواقع الرسمية في تبويب جديد، ولا تتجاوز قيود الشبكات أو إعدادات المواقع.</p>
+<p class="note">تُفتح المواقع الرسمية في تبويب جديد. قد تحتاج بعض الخدمات إلى تسجيل الدخول أو تطبيقها الرسمي.</p>
 </section>
 </main>
-<footer>R-DIAB · للمواقع التي تملكها أو لديك إذن باستخدامها</footer>
-<script>
-const hostSelect=document.getElementById("host"),pathInput=document.getElementById("path"),viewer=document.getElementById("viewer"),status=document.getElementById("status");
-async function loadHosts(){try{const response=await fetch("/api/allowed"),data=await response.json();hostSelect.innerHTML="";data.hosts.forEach(host=>{const option=document.createElement("option");option.value=host;option.textContent=host;hostSelect.appendChild(option)});status.textContent=data.hosts.length?"اختر نطاقًا مسموحًا ثم اضغط «افتح الموقع».":"لا توجد نطاقات مسموح بها حاليًا."}catch{status.textContent="تعذّر تحميل قائمة النطاقات."}}
-document.getElementById("go").addEventListener("click",()=>{const host=hostSelect.value;if(!host){status.textContent="لا يوجد نطاق مسموح. اضبط ALLOWED_HOSTS في الاستضافة أولًا.";return}let path=pathInput.value.trim()||"/";if(!path.startsWith("/"))path="/"+path;if(path.startsWith("//")||path.includes("://")){status.textContent="اكتب مسارًا داخل النطاق فقط، وليس رابطًا خارجيًا.";return}viewer.src="/proxy/"+encodeURIComponent(host)+path;status.textContent="جارٍ فتح "+host+path});
-loadHosts();
-</script></body></html>
+<footer>R-DIAB · روابط للمواقع الرسمية</footer>
+</body></html>
