@@ -11,6 +11,7 @@ main{width:min(1000px,92%);margin:7vh auto 30px;text-align:center}h1{font-size:c
 select,input,button{min-height:48px;border-radius:10px;border:1px solid #35577f;background:#091321;color:#eef4ff;padding:0 13px;font-size:15px}button{background:#1677d2;border:0;padding:0 25px;font-weight:bold;cursor:pointer}button:hover{background:#2992f4}
 #status{color:#9db5d2;font-size:13px;min-height:22px;margin-top:13px}.viewer{margin-top:22px;height:58vh;min-height:320px;overflow:hidden;border:1px solid #29496f;border-radius:14px;background:#fff}iframe{width:100%;height:100%;border:0;background:white}
 footer{margin-top:auto;padding:22px;text-align:center;color:#72849d;font-size:12px}@media(max-width:650px){.controls{grid-template-columns:1fr}header{padding:18px 5%}main{margin-top:4vh}}
+.quick{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px;border:1px solid #35577f;border-radius:10px;background:#091321;color:#dcecff;text-decoration:none;font-weight:bold}.quick:hover{background:#17365a;border-color:#68b7ff}
 </style></head>
 <body>
 <header><div class="logo">R-DIAB</div><div class="tag">AUTHORIZED WEB GATEWAY</div></header>
@@ -19,7 +20,22 @@ footer{margin-top:auto;padding:22px;text-align:center;color:#72849d;font-size:12
 <section class="panel"><div class="controls">
 <select id="host" aria-label="النطاق المسموح"></select><input id="path" value="/" placeholder="/page" aria-label="مسار الصفحة"><button id="go">افتح الموقع</button>
 </div><div id="status" role="status">جارٍ تحميل قائمة النطاقات...</div></section>
-<section class="viewer"><iframe id="viewer" title="الموقع المعروض" referrerpolicy="no-referrer"></iframe></section></main>
+<section class="viewer"><iframe id="viewer" title="الموقع المعروض" referrerpolicy="no-referrer"></iframe></section>
+<section class="panel" style="margin-top:18px;text-align:right">
+<h2 style="margin:0 0 14px;font-size:19px">روابط سريعة للمواقع</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px">
+<a class="quick" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+<a class="quick" href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Google</a>
+<a class="quick" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+<a class="quick" href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">WhatsApp Web</a>
+<a class="quick" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a class="quick" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a>
+<a class="quick" href="https://www.snapchat.com/" target="_blank" rel="noopener noreferrer">Snapchat</a>
+<a class="quick" href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">Roblox</a>
+</div>
+<p style="color:#9db5d2;font-size:12px;margin:13px 0 0">الروابط تفتح المواقع الرسمية في تبويب جديد، ولا تتجاوز قيود الشبكات أو إعدادات المواقع.</p>
+</section>
+</main>
 <footer>R-DIAB · للمواقع التي تملكها أو لديك إذن باستخدامها</footer>
 <script>
 const hostSelect=document.getElementById("host"),pathInput=document.getElementById("path"),viewer=document.getElementById("viewer"),status=document.getElementById("status");
